@@ -4,7 +4,6 @@ const Persons = (props) => {
     return (
         <div>
             {props.persons.map(person => {
-                console.log(person.name)
                 return (
                     <form key={person.name} onSubmit={() => props.remove(person)}>
                         <span style={{ display: 'inline-block' }}>
