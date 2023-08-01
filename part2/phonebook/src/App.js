@@ -54,10 +54,6 @@ const App = () => {
                 setError(false)
               }, 5000)
             })
-            // setNewNotification(`Updated ${newName}`)
-            // setTimeout(() => {
-            //   setNewNotification(null)
-            // }, 5000)
         }
     } else {
         if (nameObject.name !== '') {
