@@ -9,9 +9,11 @@ const requestLogger = (request, response, next) => {
     next()
 }
 
+const cors = require('cors')
 
 app.use(express.json())
 app.use(requestLogger)
+app.use(cors())
 
 
 let notes = [
@@ -90,7 +92,7 @@ app.post('/api/notes', (request, response) => {
 
 app.use(unknownEndpoint)
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
