@@ -61,10 +61,15 @@ const App = () => {
             .create(nameObject)
             .then(returnedPerson => {
               setPersons(persons.concat(returnedPerson))
+              setNewNotification(`Added ${newName}`)
             })
-            setNewNotification(`Added ${newName}`)
+            .catch(error => {
+              setError(true)
+              setNewNotification(error.response.data.error)
+            })
             setTimeout(() => {
               setNewNotification(null)
+              setError(false)
             }, 5000)
         }
     }
